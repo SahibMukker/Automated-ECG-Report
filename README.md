@@ -8,15 +8,27 @@ The tool accepts the following data formats:
 
 ## Output Details
 Each report consists of:
-###Patient Info (if provided):
+
+F1 Score of model
+
+Patient Info (if provided):
 - Age
-- Sex
 - Height
 - Weight (kg)
 - Recording Date
 
-###ECG Diagnostic Report:
+ECG Diagnostic Report:
 - SCP code (NORM, ASMI, etc.) and description of code (ex. NORM: normal ECG)
+## Example Output
+F1 Score: 0.7364605946201038
 
+Patient Info:
+ - Age: 81.0
+ - Height: nan
+ - Weight: nan
+ - Recording Date: 1986-02-26 04:51:21
+
+ECG Diagnostic Report:
+ - No diagnostic abnormalities detected.
 ## Citations
 Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T. (2022). PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3). PhysioNet. https://doi.org/10.13026/kfzx-aw45.
