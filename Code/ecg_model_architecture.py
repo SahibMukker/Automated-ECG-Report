@@ -71,6 +71,3 @@ def train_model(model, dataset, device, num_epochs=50, batch_size=64, learning_r
         print(f"Epoch {epoch + 1}, Loss: {running_loss / len(dataloader):.4f}")
 
     torch.save(model.state_dict(), 'ecg_classifier.pth')
-    
-    
-print("new_ecg_model loaded")
