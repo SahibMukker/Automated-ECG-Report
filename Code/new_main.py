@@ -97,15 +97,20 @@ print('F1 Score:', f1_score(all_targets, all_preds, average='micro'))
 
 #---------Generate Report for an Example Prediction---------------
 print('\n--- Generating Report for an Example Prediction ---\n')
+
 # Example: Choose the first predicted label row
-example_index = 7
+example_index = 140
 example_prediction = all_preds[example_index]
-predicted_labels = [mlb.classes_[i] for i in range(len(example_prediction)) if example_prediction[i] == 1]
+excluded_labels = {'SR'}  # Add more codes here if needed
+predicted_labels = [
+    mlb.classes_[i]
+    for i in range(len(example_prediction))
+    if example_prediction[i] == 1 and mlb.classes_[i] not in excluded_labels
+]
 
 # Example patient info from the DataFrame
 patient_info = {
     'Age': df.iloc[example_index]['age'],
-    'Sex': df.iloc[example_index]['sex'],
     'Height': df.iloc[example_index]['height'],
     'Weight': df.iloc[example_index]['weight'],
     'Recording Date': df.iloc[example_index]['recording_date'],
@@ -118,7 +123,7 @@ def loading_diagnostic_map(csv_path='scp_statements.csv'):
         Dictionary: contains the code (ex. 'NORM') and the associated disease description
     '''
     df = pd.read_csv(csv_path)
-    df = df[df['diagnostic'] == 1]
+    df = pd.read_csv(csv_path)
     diag_map = pd.Series(df['description'].values, index=df['scp_code']).to_dict()
     return diag_map
 
