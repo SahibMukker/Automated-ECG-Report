@@ -13,7 +13,7 @@ F1 Score of model
 
 Patient Info (if provided):
 - Age
-- Height
+- Height (cm)
 - Weight (kg)
 - Recording Date
 
@@ -23,12 +23,12 @@ ECG Diagnostic Report:
 F1 Score: 0.7364605946201038
 
 Patient Info:
- - Age: 81.0
+ - Age: 74.0
  - Height: nan
  - Weight: nan
- - Recording Date: 1986-02-26 04:51:21
+ - Recording Date: 1986-03-05 09:04:12
 
 ECG Diagnostic Report:
- - No diagnostic abnormalities detected.
+ - LAFB: left anterior fascicular block
 ## Citations
 Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T. (2022). PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3). PhysioNet. https://doi.org/10.13026/kfzx-aw45.
